@@ -4,6 +4,7 @@ import LocationAutocomplete from "./LocationAutocomplete";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { storage } from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import config from "../config"; // Import the config
 
 const ItineraryForm = ({
   itinerary,
@@ -251,7 +252,7 @@ const ItineraryForm = ({
           />
           {location.lat && location.lng && (
             <LoadScript
-              googleMapsApiKey="AIzaSyA59jbqFs04PGArlQQlJpA7vDdZIpK0-s8"
+              googleMapsApiKey={config.googleMapsApiKey}
               libraries={["places"]}
             >
               <GoogleMap

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LoadScript, StandaloneSearchBox } from "@react-google-maps/api";
+import config from "../config"; // Import the config
 
 const libraries = ["places"];
 
@@ -25,7 +26,7 @@ const LocationAutocomplete = ({ onSelect }) => {
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyA59jbqFs04PGArlQQlJpA7vDdZIpK0-s8"
+      googleMapsApiKey={config.googleMapsApiKey}
       libraries={libraries}
       loadingElement={<div>Loading...</div>}
     >
